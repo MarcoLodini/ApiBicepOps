@@ -2,6 +2,7 @@ param apimServiceName string
 param apiConfiguration object
 param apiVersionSetConfiguration object
 param namedValuesConfiguration array
+param backendsConfiguration array
 
 resource apim 'Microsoft.ApiManagement/service@2023-05-01-preview' existing = {
   name: apimServiceName
@@ -76,4 +77,9 @@ resource products 'Microsoft.ApiManagement/service/products@2023-05-01-preview' 
       description: '${product} product'
       state: 'published'
     }
+}]
+
+resource backends 'Microsoft.ApiManagement/service/backends@2024-05-01' = [for backend in backendsConfiguration: {
+  name: '${apiConfiguration.name}-${backend.name}'
+  properties: backend.properties
 }]
