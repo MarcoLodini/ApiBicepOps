@@ -28,6 +28,7 @@ Before using **ApiBicepOps**, ensure you have the following prerequisites:
 ## Contributors
 This project is maintained by:
 - **Marco Lodini**
+
 Contributors are well accepted
 
 ## License
