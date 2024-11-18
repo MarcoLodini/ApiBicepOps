@@ -13,7 +13,7 @@
 <policies>
     <inbound>
         <base />
-        <set-variable name="test" value="{{exampleVariable}}" />
+        <set-variable name="test" value="{°{exampleVariable}°}" />
         <!-- {#{}#} syntax is used for named values that are not handled by this API -->
         <set-variable name="testGlobal" value="{#{existingNamedValue}}#" />
     </inbound>
