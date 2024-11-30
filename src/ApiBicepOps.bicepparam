@@ -1,4 +1,4 @@
-using 'ApiBicepOps.bicep'
+using 'main.bicep'
 
 var api = 'exampleapi' //Name of the API
 var version = 'v1' //Version of the API to deploy
