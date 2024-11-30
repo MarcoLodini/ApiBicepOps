@@ -28,7 +28,7 @@ resource api 'Microsoft.ApiManagement/service/apis@2021-08-01' = {
       //This MAY look ugly, but it really simplifies life for the user: easier named values!
       //That way, users do not have to calculate named values when putting them in their .xml, but use the same variable name
       //Also, allows global values if their named values already exist in APIM by using {#{value-name}#}
-      value: replace(replace(replace(replace(apiConfiguration.policy, '{{', '{{${apiConfiguration.name}-'), '}}', '-${apiConfiguration.properties.apiVersion}}}'), '{#{', '{{'), '}#}', '}}')
+      value: replace(replace(replace(replace(apiConfiguration.policy, '{°{', '{{${apiConfiguration.name}-'), '}°}', '-${apiConfiguration.properties.apiVersion}}}'), '{#{', '{{'), '}#}', '}}')
       format: 'rawxml'
     }
   }
@@ -43,7 +43,7 @@ resource operationPolicies 'Microsoft.ApiManagement/service/apis/operations/poli
   ]
   properties: {
     //Same thing as the global policy here
-    value: replace(replace(replace(replace(policy.value, '{{', '{{${apiConfiguration.name}-'), '}}', '-${apiConfiguration.properties.apiVersion}}}'), '{#{', '{{'), '}#}', '}}')
+    value: replace(replace(replace(replace(policy.value, '{°{', '{{${apiConfiguration.name}-'), '}°}', '-${apiConfiguration.properties.apiVersion}}}'), '{#{', '{{'), '}#}', '}}')
     format: 'rawxml'
   }
 }]
