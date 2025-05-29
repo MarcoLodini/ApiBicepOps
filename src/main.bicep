@@ -83,3 +83,15 @@ resource backends 'Microsoft.ApiManagement/service/backends@2024-05-01' = [for b
   name: '${apiConfiguration.name}-${backend.name}'
   properties: backend.properties
 }]
+
+// We are allowing a single subscription here. Subscriptions should be handled directly in the portal
+resource apimSubscription 'Microsoft.ApiManagement/service/subscriptions@2023-05-01-preview' = {
+  name: api.name
+  parent: apim
+  properties: {
+    allowTracing: true
+    displayName: take(api.name, 100) // Subscription display name must be less than 100 characters
+    scope: '/apis/${api.id}'
+    state: 'active'
+  }
+}
