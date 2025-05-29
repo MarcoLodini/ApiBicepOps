@@ -11,6 +11,7 @@ If you don't know how to format a section, please refer to the awesome [Azure AP
 - **Simple CI/CD pipelines**: The project supports simple CI/CD pipelines for seamless releases: just put a Bicep deployment task and you're done.
 - **Key Vault secret named values support**: Reference Key Vault values to deploy secrets and use them in your policies.
 - **Simplified named value management**: Custom templating syntax eliminates the complexity of managing named values across multiple environments. Instead of calculating and hardcoding named value references in your policies, use intuitive variable placeholders that automatically resolve to environment-specific named values during deployment. This approach prevents naming conflicts, reduces configuration errors, and enables true infrastructure-as-code practices for API policies.
+- **Named Values as "variables"**: By using named values as "variables" in policies, if something is missing, deployment fails. I think that's good.
 
 ## Installation
 No installation is needed. Users only need a text editor to work on the project. **VS Code** is recommended due to the very useful Bicep extension.
