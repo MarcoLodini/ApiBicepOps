@@ -7,7 +7,7 @@ var revision = '2' //API revision
 param apimServiceName = 'myapimservice' //Name of the APIM Service instance
 
 param apiVersionSetConfiguration = {
-  name: '${api}set'
+  name: '${api}set' //DO NOT EDIT - Unless you want to customize the name of the API Version Set
   properties: {
     displayName: 'Example API'
     description: 'Example API set'
@@ -16,7 +16,7 @@ param apiVersionSetConfiguration = {
 }
 
 param apiConfiguration = {
-  name: '${api}${version}'
+  name: '${api}${version}' //DO NOT EDIT - Unless you want to customize the name of the API
   policy: loadTextContent('./policies/global.xml')
   properties: {
     value: loadTextContent('./apidefinition.yml')
@@ -63,6 +63,7 @@ param apiConfiguration = {
   ]
 }
 
+//Use named valukes to store configuration values to be used in policies
 param namedValuesConfiguration = [
   {
     name: 'exampleVariable'
